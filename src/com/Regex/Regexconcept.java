@@ -15,11 +15,13 @@ public class Regexconcept {
         String first = scanner.nextLine();
         System.out.println("Enter the lastname :");
         String last = scanner.nextLine();
+        System.out.println("Enter emailid");
+        String email=scanner.nextLine();
         Pattern pattern = Pattern.compile("[A-Z][a-z]{2,}");
-        Matcher matcher = pattern.matcher(first);
-        pattern.matcher(last);
+
 
         System.out.println(pattern.matches("[A-Z][a-z]{2,}", first));
         System.out.println(pattern.matches("[A-Z][a-z]{2,}",last));
+        System.out.println(pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",email));
     }
 }
