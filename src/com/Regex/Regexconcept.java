@@ -1,4 +1,6 @@
 package com.Regex;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -7,6 +9,7 @@ import java.util.regex.Pattern;
 public class Regexconcept {
     public static void main(String[] args) {
         UserName();
+        Emailvalidation();
 
     }
     public static void UserName() {
@@ -31,6 +34,31 @@ public class Regexconcept {
         System.out.println(pattern.matches("^+(0|91)?[7-9][0-9]{9}",phoneNo));
         System.out.println(pattern.matches("^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%&]).{8,20}$", password));
 
+    }
+    public static void Emailvalidation() {
+        List emails = new ArrayList();
+        emails.add("lokeshmk25@gamil.com");
+        emails.add("abc@yahoo.com");
+        emails.add("abc-100@yahoo.com");
+        emails.add("abc.100@yahoo.com");
+        emails.add("abc111@abc.com");
+        emails.add("abc-100@abc.net");
+        emails.add("abc.100@abc.com.au");
+        emails.add("abc@1.com");
+        emails.add("abc@gmail.com.com");
+        emails.add("abc....2002@gmail.com");
+        emails.add("abc%*.@gmail.com");
+        emails.add("abc123@.com.com");
+        emails.add("abc");
+        emails.add("abc123@.com");
+        emails.add("abc()*@gmail.com");
+        emails.add("abc+100@gmail.com");
+        String regex = "^[A-Za-z0-9+_.-]+@(?=.*[a-z])[a-z0-9][a-zA-Z0-9.-]+.{2,3}$";
+        Pattern pattern = Pattern.compile(regex);
+        for (Object email : emails) {
+            Matcher matcher = pattern.matcher((CharSequence) email);
+            System.out.println(email + " : " + matcher.matches());
+        }
     }
 }
 
