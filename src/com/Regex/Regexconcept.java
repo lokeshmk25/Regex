@@ -17,11 +17,14 @@ public class Regexconcept {
         String last = scanner.nextLine();
         System.out.println("Enter emailid");
         String email=scanner.nextLine();
+        System.out.println("Enter the phonenumber with country code");
+        String phoneNo=scanner.nextLine();
         Pattern pattern = Pattern.compile("[A-Z][a-z]{2,}");
 
 
         System.out.println(pattern.matches("[A-Z][a-z]{2,}", first));
         System.out.println(pattern.matches("[A-Z][a-z]{2,}",last));
-        System.out.println(pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",email));
+       System.out.println(pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",email));
+        System.out.println(pattern.matches("^+(0|91)?[7-9][0-9]{9}",phoneNo));
     }
 }
