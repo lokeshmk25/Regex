@@ -5,14 +5,21 @@ import java.util.regex.Pattern;
 
 public class Regexconcept {
     public static void main(String[] args) {
+        UserName();
+
+    }
+    public static void UserName() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Name starts with cap and has minimum 3 charcters");
         System.out.println("Enter the firstname :");
-        String  s=scanner.nextLine();
+        String first = scanner.nextLine();
+        System.out.println("Enter the lastname :");
+        String last = scanner.nextLine();
         Pattern pattern = Pattern.compile("[A-Z][a-z]{2,}");
-        Matcher matcher = pattern.matcher(s);
-        boolean ismatched=matcher.matches();
+        Matcher matcher = pattern.matcher(first);
+        pattern.matcher(last);
 
-        System.out.println(ismatched);
+        System.out.println(pattern.matches("[A-Z][a-z]{2,}", first));
+        System.out.println(pattern.matches("[A-Z][a-z]{2,}",last));
     }
 }
