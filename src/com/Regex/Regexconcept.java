@@ -15,16 +15,19 @@ public class Regexconcept {
         String first = scanner.nextLine();
         System.out.println("Enter the lastname :");
         String last = scanner.nextLine();
-        System.out.println("Enter emailid");
+        System.out.println("Enter emailid:");
         String email=scanner.nextLine();
-        System.out.println("Enter the phonenumber with country code");
+        System.out.println("Enter the phonenumber with country code :");
         String phoneNo=scanner.nextLine();
-        Pattern pattern = Pattern.compile("[A-Z][a-z]{2,}");
+        System.out.println("Enter the password :");
+        String password=scanner.nextLine();
+        Pattern pattern = Pattern.compile("[A-Z][a-z]{8,}");
 
 
         System.out.println(pattern.matches("[A-Z][a-z]{2,}", first));
         System.out.println(pattern.matches("[A-Z][a-z]{2,}",last));
        System.out.println(pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",email));
         System.out.println(pattern.matches("^+(0|91)?[7-9][0-9]{9}",phoneNo));
+        System.out.println(pattern.matches("^[a-zA-Z]{8,}", password));
     }
 }
