@@ -29,7 +29,7 @@ public class Regexconcept {
         System.out.println(pattern.matches("[A-Z][a-z]{2,}",last));
        System.out.println(pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",email));
         System.out.println(pattern.matches("^+(0|91)?[7-9][0-9]{9}",phoneNo));
-        System.out.println(pattern.matches("^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{8,20}$", password));
+        System.out.println(pattern.matches("^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%&]).{8,20}$", password));
 
     }
 }
