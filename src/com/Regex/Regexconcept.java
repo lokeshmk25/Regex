@@ -28,6 +28,6 @@ public class Regexconcept {
         System.out.println(pattern.matches("[A-Z][a-z]{2,}",last));
        System.out.println(pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",email));
         System.out.println(pattern.matches("^+(0|91)?[7-9][0-9]{9}",phoneNo));
-        System.out.println(pattern.matches("^[a-zA-Z]{8,}", password));
+        System.out.println(pattern.matches("^(?=.*[A-Z])[a-zA-Z]{8,}", password));
     }
 }
