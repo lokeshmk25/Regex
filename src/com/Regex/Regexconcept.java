@@ -2,13 +2,14 @@ package com.Regex;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
 public class Regexconcept {
     public static void main(String[] args) {
-        UserName();
+       // UserName();
         Emailvalidation();
 
     }
@@ -46,7 +47,7 @@ public class Regexconcept {
         emails.add("abc.100@abc.com.au");
         emails.add("abc@1.com");
         emails.add("abc@gmail.com.com");
-        emails.add("abc....2002@gmail.com");
+        emails.add("abc2002@gmail.com");
         emails.add("abc%*.@gmail.com");
         emails.add("abc123@.com.com");
         emails.add("abc");
@@ -55,10 +56,10 @@ public class Regexconcept {
         emails.add("abc+100@gmail.com");
         String regex = "^[A-Za-z0-9+_.-]+@(?=.*[a-z])[a-z0-9][a-zA-Z0-9.-]+.{2,3}$";
         Pattern pattern = Pattern.compile(regex);
-        for (Object email : emails) {
-            Matcher matcher = pattern.matcher((CharSequence) email);
-            System.out.println(email + " : " + matcher.matches());
-        }
+       //converting regex to predicate
+        Predicate predicate = pattern.asPredicate();
+        emails.forEach(n -> {if (predicate.test(n))System.out.println(n+ " is valid"); });
     }
+
 }
 
